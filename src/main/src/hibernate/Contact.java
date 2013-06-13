@@ -1,10 +1,16 @@
 package hibernate;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="contacts")
 public class Contact {
     private Long id;
     private String firstName;
     private String lastName;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -13,6 +19,7 @@ public class Contact {
         this.id = id;
     }
 
+    @Column(name="firstName", length=50)
     public String getFirstName() {
         return firstName;
     }
@@ -21,6 +28,7 @@ public class Contact {
         this.firstName = firstName;
     }
 
+    @Column(name="lastName", length=50)
     public String getLastName() {
         return lastName;
     }
