@@ -17,7 +17,11 @@ public class ContactRepository {
     }
 
     public void save(Contact contact) {
-        //Delete this comment line and implement your code here
+        Session session = this.sessionFactory.openSession();
+        session.beginTransaction();
+        session.save(contact);
+        session.getTransaction().commit();
+        session.close();
     }
 
     public List<Contact> findAll() {

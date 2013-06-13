@@ -3,6 +3,11 @@ package hibernate;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 public class ContactRepositoryIntegrationTest {
     private ContactRepository contactRepository;
 
@@ -14,7 +19,11 @@ public class ContactRepositoryIntegrationTest {
 
     @Test
     public void shouldSaveContactsToRepository() {
-        //Delete this comment line and write your test here
+        contactRepository.save(createContact("Robert", "James"));
+        contactRepository.save(createContact("Joe", "Smith"));
+
+        List<Contact> savedContacts = contactRepository.findAll();
+        assertThat(savedContacts.size(), is(2));
     }
 
     private Contact createContact(String firstName, String lastName) {
