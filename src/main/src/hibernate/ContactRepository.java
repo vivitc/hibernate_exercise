@@ -37,4 +37,12 @@ public class ContactRepository {
         query.executeUpdate();
         session.close();
     }
+
+    public void update(Contact contact) {
+        Session session = this.sessionFactory.openSession();
+        session.beginTransaction();
+        session.update(contact);
+        session.getTransaction().commit();
+        session.close();
+    }
 }
