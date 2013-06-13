@@ -3,7 +3,7 @@ Please have your computer set up as follows. Note that there are a few elements 
 1. Download the code
 git clone git@github.com:vivitc/hibernate_exercise.git
 
-2. Create a new IntelliJ project and import the existing *.iml module file.
+2. Create a new IntelliJ project and import from existing source.
 Comment:
 Read up on HSQLDB to familiarize yourself with what it is.
 
